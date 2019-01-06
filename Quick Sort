@@ -1,0 +1,44 @@
+//如果平方时间复杂度超过了百万级，就用快速排序O（nlogn)的时间复杂度
+//使用了sort库函数
+//【一组数据按行进行排序】
+#include <stdio.h>
+#include <algorithm>
+using namespace std;
+int main(){
+int n;
+int buf[10000];
+while(scanf("%d",&n)!=EOF){
+for(int i=0;i<n;i++){
+scanf("%d",&buf[i]);
+}
+sort(buf,buf+n);//代表待排序内存的起始地址和结束地址
+for(int i=0;i<n;i++){
+printf("%d",&buf[i]);
+}
+printf("/n");
+}
+return 0 ;
+}
+
+//【利用sort完成降序排列】
+#include <stdio.h>
+#include <alrigothm>
+using namespace std;
+bool cmp(int x,int y){
+return x>y;//定义cmp函数，当cmp的返回值为ture时，则表示第一个参数比第二个参数大。
+}
+int main(){
+int n;
+int buf[100];
+while(scanf("%d",&n)!=EOF){
+for(int i=0;i<n;i++)
+scanf("%d",&buf[i]);
+}
+sort(buf,buf+n,cmp);//使用自己定义的降序排列规则
+for(int i=0;i<n;i++){
+printf("%d",buf[i]);
+}
+printf("\n");
+}
+return 0;
+}
