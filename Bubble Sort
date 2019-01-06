@@ -1,0 +1,37 @@
+//BuBBle Sort Key Code 
+for（i=0;i<n;i++){
+for (j=0;j<n-i-1;j++){
+if(a[j+1]<a[j]){
+temp=a[j+1];
+a[j+1]=a[j];
+a[j]=temp;
+}
+}
+}
+
+
+【VC6 对输入的多行数进行排序并输出】
+#include<stdio.h>
+int main(){
+	int n;
+	int buf[100];//用buf[100]保存将要排序的数字
+  while (scanf("%d", &n)!=EOF) {
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &buf[i]);
+	}//输入待排序数据
+	for (int j = 0; j<n; j++) {
+		for(int m=0; m<n-j-1; m++) {
+			if (buf[m] > buf[m + 1]) {
+				int temp = buf[m + 1];
+				buf[m+1] = buf[m];
+				buf[m] = temp;
+			}
+		}
+	}//冒泡排序主体
+for (int t = 0; t < n; t++) {
+	printf("%d", &buf[t]);
+}
+printf("\n");//每行输出后换行
+}
+  return 0;
+ }
