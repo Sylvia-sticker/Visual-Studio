@@ -35,3 +35,27 @@ printf("\n");//每行输出后换行
 }
   return 0;
  }
+
+
+
+//算法笔记（数组，从左到右，注意第二个循环）
+#include<stdio.h>
+int main(){
+int a[9]={3,1,5,4,2};
+/*冒泡排序主体：规则：从左至右相邻两项相互比较，
+若左比右大，则两者交换*/ 
+for(int i=0;i<=4;i++){
+	
+	for(int j=1;j<5-i;j++){      //因为是把大的数往左拿，所以第i趟时，后面5-i个已经排好了
+		if(a[j-1]>a[j]){
+			int temp=a[j];
+			a[j]=a[j-1];
+			a[j-1]=temp;
+		} 
+	}
+}
+for(int i=0;i<5;i++){
+	printf("a[%d]=%d\n",i,a[i]);
+}
+return 0;
+}
